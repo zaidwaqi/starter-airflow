@@ -1,0 +1,17 @@
+[Unit]
+Description=Airflow scheduler daemon
+After=network.target postgresql.service mysql.service redis.service rabbitmq-server.service
+Wants=postgresql.service mysql.service redis.service rabbitmq-server.service
+
+[Service]
+Environment="AIRFLOW_HOME=/airflow"
+Environment="PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/airflow/.local/bin:/airflow/bin"
+User=airflow
+Group=airflow
+Type=simple
+ExecStart=/airflow/.local/bin/airflow scheduler
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
