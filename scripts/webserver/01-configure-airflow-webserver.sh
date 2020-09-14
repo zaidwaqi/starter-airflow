@@ -15,5 +15,3 @@ sudo su -c 'sed -i "s/^base_log_folder =.*/base_log_folder = \/logs/g" $AIRFLOW_
 sudo cp /mnt/data/airflow-webserver.service /etc/systemd/system/
 sudo systemctl enable airflow-webserver
 sudo systemctl start airflow-webserver
-
-sudo su -c "airflow create_user -r Admin -u admin -f John -l Wick -e admin@tm.com.my -p pass123" - airflow

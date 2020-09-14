@@ -18,3 +18,5 @@ sudo su -c 'airflow initdb' - airflow
 sudo cp /mnt/data/airflow-scheduler.service /etc/systemd/system/
 sudo systemctl enable airflow-scheduler
 sudo systemctl start airflow-scheduler
+
+sudo su -c "airflow create_user -r Admin -u admin -f John -l Wick -e admin@tm.com.my -p pass123" - airflow
