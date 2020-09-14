@@ -1,0 +1,1 @@
+This file will be ignored by scheduler because it does not end with .py extension
